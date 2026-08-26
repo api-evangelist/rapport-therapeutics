@@ -1,8 +1,21 @@
 aid: rapport-therapeutics
 name: Rapport Therapeutics
-description: 'Rapport Therapeutics is a company surfaced via the API Evangelist harvest backlog (source:
-  secondary-market) and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Rapport Therapeutics, Inc. (Nasdaq: RAPP) is a clinical-stage biotechnology company headquartered in
+  Boston, Massachusetts with research operations in San Diego, California, founded in 2022 and taken
+  public in a $174 million IPO in June 2024. Rapport develops precision small-molecule medicines for
+  central nervous system disorders using its proprietary RAP technology platform, which pairs human
+  genetics with functional proteomics to identify receptor-associated proteins that confer
+  neuroanatomical specificity — the goal being drugs that act only where the disease circuit lives
+  rather than across the whole brain. Its lead clinical candidate, RAP-219, is a selective negative
+  allosteric modulator of TARP-gamma-8-associated AMPA receptors in development for focal onset
+  seizures, peripheral neuropathic pain and bipolar disorder, behind two discovery-stage nicotinic
+  acetylcholine receptor programs targeting alpha-6 (chronic pain) and alpha-9-alpha-10 (hearing
+  disorders). Rapport is a therapeutics developer, not a software vendor: the RAP platform is an
+  internal discovery capability and the company publishes no developer program, no public API and no
+  machine-readable API contract.
 url: https://raw.githubusercontent.com/api-evangelist/rapport-therapeutics/refs/heads/main/apis.yml
+image: https://www.rapportrx.com/wp-content/uploads/2023/02/rapportrx-yoast-logo.jpg
 x-type: company
 x-source: harvest:secondary-market
 x-tier: stub
@@ -12,6 +25,15 @@ created: '2026-08-26'
 modified: '2026-08-26'
 tags:
 - Company
+- Biotechnology
+- Pharmaceuticals
+- Life Sciences
+- Healthcare
+- Neuroscience
+- Central Nervous System
+- Drug Discovery
+- Clinical Trials
+- Epilepsy
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +41,53 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/rapport-therapeutics-domain-security.yml
 - type: Website
-  url: https://forgeglobal.com/rapport-therapeutics_stock/
+  url: https://www.rapportrx.com/
+- type: About
+  url: https://www.rapportrx.com/about/
+- type: Support
+  url: https://www.rapportrx.com/contact/
+- type: PrivacyPolicy
+  url: https://www.rapportrx.com/privacy-policy/
+- type: TermsOfService
+  url: https://www.rapportrx.com/terms-of-use/
+- type: BlogRSS
+  url: https://www.rapportrx.com/feed/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/rapport-therapeutics/
+- type: LLMsTxt
+  url: llms/rapport-therapeutics-llms.txt
+x-enrichment:
+  date: '2026-08-26'
+  status: minimal
+  artifacts_added: 3
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: >-
+    Rapport Therapeutics is a clinical-stage CNS drug developer whose product is a molecule pipeline
+    (RAP-219 plus two discovery nAChR programs); www.rapportrx.com is a seventeen-page WordPress
+    marketing site where every contract-discovery path — /openapi.json, /swagger.json, /api-docs,
+    /graphql, /llms.txt and all seven /.well-known/ paths — returns 404, no api/developer/docs
+    subdomain resolves, the RAP platform is an internal discovery capability that is never exposed,
+    and the only machine-readable surface on the domain is the CMS's default, unadvertised /wp-json/
+    index describing pages and posts rather than a product API.
+  evidence:
+  - url: https://www.rapportrx.com/openapi.json
+    status: 404
+  - url: https://www.rapportrx.com/graphql
+    status: 404
+  - url: https://www.rapportrx.com/.well-known/api-catalog
+    status: 404
+  - url: https://www.rapportrx.com/.well-known/agent-card.json
+    status: 404
+  - url: https://www.rapportrx.com/llms.txt
+    status: 404
+  - url: https://developer.rapportrx.com/
+    status: 0
+  - url: https://investors.rapportrx.com/
+    status: 0
+  checked: '2026-08-26'

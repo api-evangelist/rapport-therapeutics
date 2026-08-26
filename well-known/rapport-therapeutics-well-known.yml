@@ -1,0 +1,52 @@
+generated: '2026-08-26'
+method: probed
+source: >-
+  Direct unauthenticated HTTPS probes (browser User-Agent) of every /.well-known/ path in the
+  enrichment contract against www.rapportrx.com, the only reachable host Rapport Therapeutics
+  operates. Every path returned HTTP 404. No pointer of type WellKnown or SecurityTxt is emitted —
+  this file records a verified absence, not a served surface.
+hosts:
+- host: www.rapportrx.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+hit_count: 0
+soft_404_control:
+  path: /.well-known/thisdoesnotexist-control
+  status: 404
+  bytes: 24343
+  note: >-
+    The control path returns the same 404 status and the same 24,343-byte WordPress 404 template as
+    every real /.well-known/ probe, so this host is not a catch-all answering 200 — the negatives
+    above are true negatives.
+notes:
+- >-
+  /.well-known/security.txt and /llms.txt return a bare nginx 404 (548 bytes) rather than the
+  WordPress theme 404, indicating those two paths are handled upstream of WordPress; either way no
+  document is served.
+- >-
+  No A2A agent card was found on the canonical /.well-known/agent-card.json path or on the legacy
+  /.well-known/agent.json path, so no a2a/ artifact was authored.
+- >-
+  investors.rapportrx.com (CNAME rapportrx.gcs-web.com, Akamai edge) refused every connection from
+  this client — curl returned 000 on both HTTP/2 and HTTP/1.1 and a browser-agent fetch timed out —
+  so its /.well-known/ surface could not be probed. Recorded as unreachable, not as absent.
