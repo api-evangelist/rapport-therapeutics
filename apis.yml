@@ -15,6 +15,17 @@ description: >-
   internal discovery capability and the company publishes no developer program, no public API and no
   machine-readable API contract.
 url: https://raw.githubusercontent.com/api-evangelist/rapport-therapeutics/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://www.rapportrx.com/wp-content/uploads/2023/02/rapportrx-yoast-logo.jpg
 x-type: company
 x-source: harvest:secondary-market
