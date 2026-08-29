@@ -15,6 +15,9 @@ description: >-
   internal discovery capability and the company publishes no developer program, no public API and no
   machine-readable API contract.
 url: https://raw.githubusercontent.com/api-evangelist/rapport-therapeutics/refs/heads/main/apis.yml
+x-api-posture: no-product-api
+x-api-posture-basis: observed
+x-api-posture-note: "Rapport is a therapeutics developer, not a software vendor: the RAP platform is an internal discovery capability and the company publishes no developer program, no public API and no machine-readable A"
 deliveryModel:
   model: saas
   open_source: false
